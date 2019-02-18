@@ -34,6 +34,13 @@
             <version>0.0.1-SNAPSHOT</version>
 
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.tobato/fastdfs-client -->
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>1.26.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -44,7 +51,7 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
-                    <port>8080</port>
+                    <port>8087</port>
                     <path>/</path>
                 </configuration>
             </plugin>
