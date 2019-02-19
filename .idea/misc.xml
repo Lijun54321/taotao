@@ -10,7 +10,9 @@
       <list>
         <option value="$PROJECT_DIR$/taotao-parent/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-manager/pom.xml" />
+        <option value="$USER_HOME$/fastdfs-client-java-master/pom.xml" />
       </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>
