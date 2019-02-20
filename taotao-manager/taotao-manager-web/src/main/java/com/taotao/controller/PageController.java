@@ -15,7 +15,6 @@ public class PageController {
 
     @RequestMapping("/")
     private String showIndex(){
-        System.out.println("asdasdasdas");
         return "index";
     }
 

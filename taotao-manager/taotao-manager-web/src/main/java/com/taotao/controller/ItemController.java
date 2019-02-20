@@ -1,12 +1,15 @@
 package com.taotao.controller;
 
 import com.taotao.common.pojo.EasyUIDataGridResult;
+import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.pojo.TbItem;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -31,4 +34,18 @@ public class ItemController {
     public EasyUIDataGridResult getItemList(Integer page, Integer rows){
         return itemService.getItemList(page, rows);
     }
+
+    @RequestMapping(value = "/item/save", method = RequestMethod.POST)
+    @ResponseBody
+    public TaotaoResult createItem(TbItem item, String desc, String itemParams){
+        return itemService.createItem(item,desc, itemParams);
+    }
+
+    @RequestMapping("/page/item/{itemId}")
+    public String showItemParam(@PathVariable Long itemId, Model model){
+        String html = itemService.getItemParamHtml(itemId);
+        model.addAttribute("myhtml", html);
+        return "item-param";
+    }
+
 }
