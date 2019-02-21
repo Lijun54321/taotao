@@ -7,11 +7,10 @@ import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.mapper.TbItemDescMapper;
 import com.taotao.mapper.TbItemMapper;
 import com.taotao.mapper.TbItemParamItemMapper;
-import com.taotao.mapper.TbItemParamMapper;
 import com.taotao.pojo.*;
 import com.taotao.service.ItemService;
-import com.taotao.utils.IDUtils;
-import com.taotao.utils.JsonUtils;
+import com.taotao.common.utils.IDUtils;
+import com.taotao.common.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

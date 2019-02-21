@@ -2,10 +2,8 @@ package com.taotao.controller;
 
 import com.taotao.common.pojo.Pictureresult;
 import com.taotao.service.PictureService;
-import com.taotao.utils.FastDFSClient;
-import com.taotao.utils.JsonUtils;
+import com.taotao.common.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

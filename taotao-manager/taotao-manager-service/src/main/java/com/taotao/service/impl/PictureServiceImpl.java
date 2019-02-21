@@ -2,12 +2,10 @@ package com.taotao.service.impl;
 
 import com.taotao.common.pojo.Pictureresult;
 import com.taotao.service.PictureService;
-import com.taotao.utils.FastDFSClient;
+import com.taotao.common.utils.FastDFSClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.net.URLDecoder;
 
 /**
  * @author lijun
