@@ -56,7 +56,6 @@ public class ItemCatServiceImpl implements ItemCatService {
                 // 如果当前节点为第一级节点
                 if (tbItemCat.getParentId() == 0) {
                     node.setName("<a href='/products/" + tbItemCat.getId() + ".html'>" + tbItemCat.getName() + "</a>");
-                    System.out.println("阿诗丹顿大多多多多多多多多多多多多多");
                     // 第一级节点不能超过14个元素， index为计数器
                     index++;
                 } else {

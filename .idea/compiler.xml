@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="fastdfs-client-java" />
+        <module name="ik-analyzer-solr5" />
         <module name="taotao-common" />
         <module name="taotao-manager-mapper" />
         <module name="taotao-manager-pojo" />
@@ -14,10 +15,12 @@
         <module name="taotao-manager-web" />
         <module name="taotao-portal" />
         <module name="taotao-rest" />
+        <module name="taotao-search" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="fastdfs-client-java" target="1.6" />
+      <module name="ik-analyzer-solr5" target="1.8" />
       <module name="taotao-common" target="1.7" />
       <module name="taotao-manager" target="1.7" />
       <module name="taotao-manager-mapper" target="1.7" />
@@ -27,6 +30,7 @@
       <module name="taotao-parent" target="1.7" />
       <module name="taotao-portal" target="1.7" />
       <module name="taotao-rest" target="1.7" />
+      <module name="taotao-search" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

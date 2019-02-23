@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/taotao-parent" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-portal" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-rest" />
+    <file type="web" url="file://$PROJECT_DIR$/taotao-search" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -15,6 +16,10 @@
         <option value="$USER_HOME$/fastdfs-client-java-master/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-portal/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-search/pom.xml" />
+        <option value="$PROJECT_DIR$/ik-analyzer-solr5-master/pom.xml" />
+        <option value="$PROJECT_DIR$/fastdfs-client-java/pom.xml" />
+        <option value="$PROJECT_DIR$/ik-analyzer-solr5/pom.xml" />
       </list>
     </option>
   </component>
