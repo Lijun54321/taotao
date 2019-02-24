@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
 <script type="text/javascript" src="/js/base-v1.js" charset="utf-8"></script>
 <!--shortcut start-->
-<jsp:include page="shortcut.jsp"/>
+<#include "shortcut.ftl"/>
 <!--shortcut end-->
 <div id="o-header-2013">
     <div class="w" id="header-2013">

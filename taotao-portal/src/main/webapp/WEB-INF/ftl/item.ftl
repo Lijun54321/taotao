@@ -1,8 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page trimDirectiveWhitespaces="true" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>${item.title } - 淘淘</title>
@@ -83,7 +80,7 @@
 } catch (e) {
 }</script>
 <!-- header start -->
-<jsp:include page="commons/header.jsp"/>
+<#include "commons/header.ftl" />
 <!-- header end -->
 <div class="w">
     <div class="breadcrumb">
@@ -109,10 +106,8 @@
                 <li id="summary-price">
                     <div class="dt">淘&nbsp;淘&nbsp;价：</div>
                     <div class="dd">
-                        <strong class="p-price" id="jd-price">￥<fmt:formatNumber groupingUsed="false"
-                                                                                 maxFractionDigits="2"
-                                                                                 minFractionDigits="2"
-                                                                                 value="${item.price / 100 }"/> </strong>
+                        <strong class="p-price" id="jd-price">￥${item.price / 100 }
+                        </strong>
                         <a id="notice-downp" href="#none" target="_blank" clstag="shangpin|keycount|product|jiangjia">(降价通知)</a>
                     </div>
                 </li>
@@ -225,22 +220,19 @@
                 <a href="javascript:;" class="spec-control" id="spec-backward"></a>
                 <div class="spec-items">
                     <ul class="lh">
-                        <c:forEach items="${item.images}" var="pic" varStatus="status">
-                            <c:choose>
-                                <c:when test="${status.index == 0 }">
+                        <#list item.images as pic>
+                                <#if pic_index == 0>
                                     <li>
                                         <img data-img="1" class="img-hover" alt="${item.title}" src="${pic}" width="50"
                                              height="50" data-url="${pic}">
                                     </li>
-                                </c:when>
-                                <c:otherwise>
+                                <#else >
                                     <li>
                                         <img data-img="1" alt="${item.title}" src="${pic}" width="50" height="50"
                                              data-url="${pic}">
                                     </li>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach>
+                                </#if>
+                        </#list>
                     </ul>
                 </div>
             </div>
@@ -306,7 +298,7 @@
                     <b></b>如果您发现商品信息不准确，欢迎纠错
                 </div>
                 <div id="item-desc" class="detail-content">
-                    <%-- ${itemDesc.itemDesc } --%>
+                    ${itemDesc }
                 </div>
             </div>
             <div class="mc hide" data-widget="tab-content" id="product-detail-2">
@@ -355,58 +347,11 @@
     <span class="clr"></span>
 </div>
 <!-- footer start -->
-<jsp:include page="commons/footer.jsp"/>
+<#include "commons/footer.ftl" />
 <!-- footer end -->
 <script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
 <script type="text/javascript" src="/js/lib-v1.js"></script>
 <script type="text/javascript" src="/js/product.js"></script>
 <script type="text/javascript" src="/js/iplocation_server.js"></script>
-<script type="text/javascript">
-    var itemControl = {
-        param: {
-            descUrl: "/item/desc/",
-            paramUrl: "/item/param/"
-        },
-        //请求商品描述
-        getItemDesc: function (itemId) {
-            $.get(itemControl.param.descUrl + itemId + ".html", function (data) {
-                //返回商品描述的html，直接显示到页面
-                $("#item-desc").append(data);
-            });
-        },
-        //参数请求flag
-        haveParam: false,
-        //请求规格参数
-        getItemParam: function (itemId) {
-            //如果没有查询过规格参数，就做请求
-            if (!itemControl.haveParam) {
-                $.get(itemControl.param.paramUrl + itemId + ".html", function (data) {
-                    //返回商品规格的html，直接显示到页面
-                    $("#product-detail-2").append(data);
-                    //更改flag状态
-                    itemControl.haveParam = true;
-                });
-            }
-        }
-    };
-    $(function () {
-        //取商品id
-        var itemId = "${item.id}";
-        //给商品规格参数tab页绑定事件
-        $("#p-con-attr").bind("click", function () {
-
-            itemControl.getItemParam(itemId);
-        });
-        //延迟一秒加载商品描述信息
-        setTimeout(function () {
-            itemControl.getItemDesc(itemId);
-        }, 1000);
-    });
-
-    //加入购物车方法
-    function addCart() {
-        window.location.href = "/cart/add/${item.id}.html?itemNum=" + $("#buy-num").val();
-    }
-</script>
 </body>
 </html>
