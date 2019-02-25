@@ -31,6 +31,13 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 
+	/**
+	 * 订单支付时的页面数据
+	 *
+	 * @param model
+	 * @param request 因为需要获取cookie中数据 需要request
+	 * @return 页面
+	 */
 	@RequestMapping("/order-cart")
 	public String showOrderCart(Model model, HttpServletRequest request) {
 		// 取购物车商品列表
@@ -39,6 +46,13 @@ public class OrderController {
 		return "order-cart";
 	}
 
+	/**
+	 * 创建订单
+	 * @param orderInfo 订单信息
+	 * @param model 写入数据
+	 * @param request 获取相应的数据
+	 * @return 返回逻辑视图
+	 */
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public String createOrder(OrderInfo orderInfo, Model model, HttpServletRequest request) {
 		// 取用户信息

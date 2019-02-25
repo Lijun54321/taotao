@@ -12,10 +12,26 @@ import com.taotao.pojo.TbItemParamItem;
  */
 public interface ItemService {
 
+	/**
+	 * 通过商品id获取商品信息
+	 *
+	 * @param itemId 商品id
+	 * @return 查询到的商品结果
+	 */
 	TbItem getItemById(Long itemId);
 
+	/**
+	 * 通过商品id获取商品描述信息
+	 * @param itemId 商品id
+	 * @return 查询到的商品结果
+	 */
 	TbItemDesc getItemDescById(Long itemId);
 
+	/**
+	 * 通过商品id获取商品参数信息
+	 * @param itemId 商品id
+	 * @return 查询到的商品结果
+	 */
 	TbItemParamItem getItemParamById(Long itemId);
 
 }

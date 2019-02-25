@@ -22,6 +22,15 @@ public class SearchController {
 	@Autowired
 	private SearchService searchService;
 
+	/**
+	 * 根据keyword分页查询商品
+	 *
+	 * @param keyword 关键字
+	 * @param page    页码
+	 * @param rows    每页数量
+	 * @param model   写入数据
+	 * @return 视图
+	 */
 	@RequestMapping("/search")
 	public String search(@RequestParam("q") String keyword,
 	                     @RequestParam(defaultValue = "1") Integer page,

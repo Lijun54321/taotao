@@ -22,7 +22,12 @@ public class PictureController {
     @Autowired
     PictureService pictureService;
 
-
+	/**
+	 * 根据图片信息上传图片
+	 *
+	 * @param uploadFile 前台传来的图片信息
+	 * @return 得到的结果
+	 */
     @RequestMapping("/pic/upload")
     @ResponseBody
     public String uploadFile(MultipartFile uploadFile) {

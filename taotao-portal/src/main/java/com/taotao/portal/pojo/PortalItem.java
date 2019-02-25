@@ -3,6 +3,7 @@ package com.taotao.portal.pojo;
 import com.taotao.pojo.TbItem;
 
 /**
+ * 处理图片
  * @author lijun
  * @version V1.0
  * @package_name: com.taotao.portal.pojo

@@ -11,6 +11,12 @@ import java.util.List;
  * Created on 2019/2/16
  */
 public interface ItemCatService {
-    List<EasyUITreeNode> getItemCatlist(long parentId);
+	/**
+	 * 接收参数parentId，根据parentId查询分类列表。返回pojo列表
+	 *
+	 * @param parentId int
+	 * @return list
+	 */
+	List<EasyUITreeNode> getItemCatlist(long parentId);
 
 }

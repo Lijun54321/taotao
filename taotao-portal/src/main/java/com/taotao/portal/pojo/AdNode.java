@@ -1,6 +1,7 @@
 package com.taotao.portal.pojo;
 
 /**
+ * 首页广告的节点
  * @author lijun
  * @version V1.0
  * @package_name: com.taotao.portal.pojo

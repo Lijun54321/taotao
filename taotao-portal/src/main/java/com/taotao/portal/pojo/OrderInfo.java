@@ -7,6 +7,7 @@ import com.taotao.pojo.TbOrderShipping;
 import java.util.List;
 
 /**
+ * 订单的信息pojo
  * @author lijun
  * @version V1.0
  * @package_name: com.taotao.order.pojo

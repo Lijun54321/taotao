@@ -11,7 +11,6 @@ import com.taotao.service.ItemParamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,11 +26,6 @@ public class ItemParamServiceImpl implements ItemParamService {
     @Autowired
     TbItemParamMapper tbItemParamMapper;
 
-
-    @Override
-    public TaotaoResult checkParam(Long cid) {
-        return null;
-    }
     @Override
     public EasyUIDataGridResult getItemParamList(int page, int rows) {
         // 分页处理

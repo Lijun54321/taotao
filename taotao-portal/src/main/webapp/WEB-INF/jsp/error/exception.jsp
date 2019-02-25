@@ -107,8 +107,6 @@
 			</ul>
 		</div>
 	</div>
-
-
 	<!-- footer start -->
 	<jsp:include page="../commons/footer.jsp" />
 	<!-- footer end -->

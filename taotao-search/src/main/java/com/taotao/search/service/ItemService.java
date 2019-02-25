@@ -13,6 +13,13 @@ import java.io.IOException;
  */
 public interface ItemService {
 
+	/**
+	 * 往solr中导入数据
+	 *
+	 * @return ok
+	 * @throws IOException
+	 * @throws SolrServerException
+	 */
 	TaotaoResult importItems() throws IOException, SolrServerException;
 
 }

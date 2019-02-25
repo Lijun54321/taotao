@@ -9,6 +9,12 @@ import com.taotao.rest.pojo.ItemCatResult;
  * @date 19-2-20 下午7:32
  */
 public interface ItemCatService {
+
+    /**
+     * 获取商品分类的信息
+     *
+     * @return
+     */
     ItemCatResult getItemCatList();
 
 }

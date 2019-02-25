@@ -21,9 +21,16 @@ import java.util.List;
 public class ItemCatControlller {
     @Autowired
     private ItemCatService itemCatService;
-    @RequestMapping("/list")
-    @ResponseBody
-    private List<EasyUITreeNode> getItemCatList(@RequestParam(value = "id", defaultValue = "0") Long parentId){
-        return itemCatService.getItemCatlist(parentId);
-    }
+
+	/**
+	 * 接收参数，parentId。调用Service查询分类类别，返回列表（json数据）
+	 *
+	 * @param parentId Long型整数
+	 * @return json数据
+	 */
+	@RequestMapping("/list")
+	@ResponseBody
+	private List<EasyUITreeNode> getItemCatList(@RequestParam(value = "id", defaultValue = "0") Long parentId){
+		return itemCatService.getItemCatlist(parentId);
+	}
 }

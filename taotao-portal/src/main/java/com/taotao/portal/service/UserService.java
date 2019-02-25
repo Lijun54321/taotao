@@ -13,6 +13,13 @@ import javax.servlet.http.HttpServletResponse;
  */
 public interface UserService {
 
+	/**
+	 * 通过token获取用户信息
+	 *
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	TbUser getUserByToken(HttpServletRequest request, HttpServletResponse response);
 
 

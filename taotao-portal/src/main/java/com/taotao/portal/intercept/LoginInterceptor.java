@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * 拦截器 用于拦截部分需要登录后才能访问的页面
  * @author lijun
  * @version V1.0
  * @package_name: com.taotao.portal.intercept

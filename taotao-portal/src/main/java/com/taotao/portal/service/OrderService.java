@@ -10,5 +10,11 @@ import com.taotao.portal.pojo.OrderInfo;
  */
 public interface OrderService {
 
+	/**
+	 * 创建订单
+	 *
+	 * @param orderInfo 订单信息
+	 * @return 订单号
+	 */
 	String createOrder(OrderInfo orderInfo);
 }

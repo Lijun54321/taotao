@@ -27,6 +27,12 @@ public class ContentController {
 	@Autowired
 	ContentService contentService;
 
+	/**
+	 * 保存一个内容的详细信息，并同步缓存(redis)
+	 *
+	 * @param content 内容
+	 * @return 参数
+	 */
 	@RequestMapping("/save")
 	@ResponseBody
 	public TaotaoResult insertContent(TBContent content){

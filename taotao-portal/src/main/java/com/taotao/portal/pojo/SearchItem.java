@@ -1,6 +1,7 @@
 package com.taotao.portal.pojo;
 
 /**
+ * 搜索成功后的商品信息
  * @author lijun
  * @version V1private String 0
  * @package_name: com.taotao.search.pojo

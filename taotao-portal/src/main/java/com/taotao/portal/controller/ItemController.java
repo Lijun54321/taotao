@@ -23,6 +23,13 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 
+	/**
+	 * 通过商品id获取商品信息
+	 *
+	 * @param itemId 商品id
+	 * @param model  写入数据
+	 * @return 视图
+	 */
 	@RequestMapping("/item/{itemId}")
 	public String showItemInfo(@PathVariable Long itemId, Model model){
 		TbItem item = itemService.getItemById(itemId);
@@ -31,18 +38,26 @@ public class ItemController {
 		return "item";
 	}
 
+	/**
+	 * 通过商品id获取商品描述信息
+	 * @param itemId 商品id
+	 * @return json数据
+	 */
 	@RequestMapping(value="/item/desc/{itemId}", produces=MediaType.TEXT_HTML_VALUE+";charset=utf-8")
 	@ResponseBody
 	public String getItemDesc(@PathVariable Long itemId) {
-		String desc = itemService.getItemDescById(itemId);
-		return desc;
+		return itemService.getItemDescById(itemId);
 	}
 
+	/**
+	 * 通过商品id获取商品参数
+	 * @param itemId 商品id
+	 * @return 查到的html代码
+	 */
 	@RequestMapping(value="/item/param/{itemId}", produces=MediaType.TEXT_HTML_VALUE+";charset=utf-8")
 	@ResponseBody
 	public String getItemParam(@PathVariable Long itemId) {
-		String paramHtml = itemService.getItemParamById(itemId);
-		return paramHtml;
+		return itemService.getItemParamById(itemId);
 	}
 
 }

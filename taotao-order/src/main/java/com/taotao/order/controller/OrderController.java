@@ -25,6 +25,12 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 
+	/**
+	 * 创建一个订单
+	 *
+	 * @param orderInfo 前台传来的数据
+	 * @return ok
+	 */
 	@RequestMapping(value = "/order/create", method = RequestMethod.POST)
 	@ResponseBody
 	public TaotaoResult createOrder(@RequestBody OrderInfo orderInfo) {

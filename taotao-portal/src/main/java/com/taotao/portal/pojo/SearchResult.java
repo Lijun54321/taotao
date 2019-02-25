@@ -3,6 +3,7 @@ package com.taotao.portal.pojo;
 import java.util.List;
 
 /**
+ * 搜索成功的全部信息
  * @author lijun
  * @version V1.0
  * @package_name: com.taotao.search.pojo

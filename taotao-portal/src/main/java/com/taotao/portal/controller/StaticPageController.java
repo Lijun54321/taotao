@@ -21,12 +21,17 @@ public class StaticPageController {
 	@Autowired
 	private StaticPageService staticPageService;
 
+	/**
+	 * 根据商品id 获取商品的html
+	 *
+	 * @param itemId
+	 * @return
+	 */
 	@RequestMapping("/gen/item/{itemId}")
 	@ResponseBody
 	public TaotaoResult genItemPage(@PathVariable Long itemId) {
 		try {
-			TaotaoResult result = staticPageService.genItemHtml(itemId);
-			return result;
+			return staticPageService.genItemHtml(itemId);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
