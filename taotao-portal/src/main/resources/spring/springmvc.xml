@@ -21,8 +21,8 @@
 
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<!--<mvc:mapping path="/order/**"/>-->
-			<mvc:mapping path="/item/**"/>
+			<mvc:mapping path="/order/**"/>
+			<!--<mvc:mapping path="/item/**"/>-->
 			<bean class="com.taotao.portal.intercept.LoginInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>

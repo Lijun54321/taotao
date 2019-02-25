@@ -20,10 +20,10 @@ var TTCart = {
 				TTCart.refreshTotalPrice();
 			});
 		});
-		$(".quantity-form .quantity-text").rnumber(1);//限制只能输入数字
+        // $(".quantity-form .quantity-text").rnumber(1);//限制只能输入数字
 		$(".quantity-form .quantity-text").change(function(){
 			var _thisInput = $(this);
-			$.post("/service/cart/update/num/"+_thisInput.attr("itemId")+"/"+_thisInput.val() + ".action",function(data){
+            $.post("/cart/update/num/" + _thisInput.attr("itemId") + "/" + _thisInput.val() + ".action", function (data) {
 				TTCart.refreshTotalPrice();
 			});
 		});

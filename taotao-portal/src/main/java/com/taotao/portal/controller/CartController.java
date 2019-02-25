@@ -1,0 +1,57 @@
+package com.taotao.portal.controller;
+
+import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.portal.pojo.CartItem;
+import com.taotao.portal.service.CartService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+
+/**
+ * @author lijun
+ * @version V1.0
+ * @package_name: com.taotao.portal.controller
+ * @date 19-2-25 下午2:15
+ */
+@Controller
+public class CartController {
+
+	@Autowired
+	private CartService cartService;
+
+	@RequestMapping("/cart/add/{itemId}")
+	public String addCart(@PathVariable Long itemId, Integer itemNum,
+	                      HttpServletResponse response, HttpServletRequest request) {
+		TaotaoResult result = cartService.addCart(itemId, itemNum, request, response);
+		return "cart-success";
+	}
+
+	@RequestMapping("/cart/cart")
+	public String showCartList(Model model, HttpServletRequest request) {
+		List<CartItem> list = cartService.getCartItems(request);
+		model.addAttribute("cartList", list);
+
+		return "cart";
+	}
+
+	@RequestMapping("/cart/update/num/{itemId}/{num}")
+	@ResponseBody
+	public TaotaoResult updateCartItemNum(@PathVariable Long itemId, @PathVariable Integer num,
+	                                      HttpServletResponse response, HttpServletRequest request) {
+		return cartService.updateCartItem(itemId, num, request, response);
+	}
+
+	@RequestMapping("/cart/delete/{itemId}")
+	public String deleteCartItem(@PathVariable Long itemId,
+	                             HttpServletResponse response, HttpServletRequest request) {
+		cartService.deleteCartItem(itemId, request, response);
+		return "redirect:/cart/cart.html";
+	}
+}
